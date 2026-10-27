@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Readability floor for an 18–80 audience: body 16px+, nothing under 14px */
+@layer base {
+  html {
+    font-size: 100%;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply text-base leading-relaxed;
+  }
+}
+
+@layer components {
+  .field-label {
+    @apply mb-1.5 block text-base font-semibold text-navy-900;
+  }
+  /* 16px text stops iOS zooming into inputs */
+  .field-input {
+    @apply block min-h-[52px] w-full rounded-xl border-2 border-navy-100 bg-white px-4 text-base text-navy-950 placeholder:text-slate-500 focus:border-navy-900 focus:outline-none focus:ring-4 focus:ring-amber-400/40;
+  }
+  .field-error {
+    @apply mt-1.5 text-sm font-semibold text-red-700;
+  }
+  .btn-primary {
+    @apply inline-flex min-h-[54px] w-full items-center justify-center rounded-xl bg-amber-400 px-5 text-center text-lg font-bold text-navy-900 shadow-sm hover:bg-amber-300 focus:outline-none focus-visible:ring-4 focus-visible:ring-navy-900/40 disabled:cursor-not-allowed disabled:opacity-60;
+  }
+  .btn-secondary {
+    @apply inline-flex min-h-[48px] items-center justify-center rounded-xl border-2 border-navy-100 bg-white px-4 font-semibold text-navy-900 hover:border-navy-900 focus:outline-none focus-visible:ring-4 focus-visible:ring-amber-400/50;
+  }
+}
